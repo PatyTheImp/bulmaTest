@@ -1,0 +1,3 @@
+# API Practice
+- Little app, using Studio Ghibli API to practice async await function in JS.
+- Used Bulma CSS framework

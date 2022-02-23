@@ -1,16 +1,56 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Open+Sans&family=Zen+Loop&display=swap");
 
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-weight: 300;
+  line-height: 1.6;
+}
+
 .original-title,
 .film-title {
   font-family: "Noto Serif JP", serif;
 }
 
-p {
+p,
+li {
   font-family: "Open Sans", sans-serif;
 }
 
 .main-title {
   font-family: "Zen Loop", cursive;
+}
+
+.media-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 5rem;
+}
+
+.film-img {
+  max-height: 30rem;
+  transform: translateX(10rem) translateY(5rem);
+}
+
+.film-video {
+  max-height: 40rem;
+  border-radius: 1rem;
+  line-height: 0;
 }
 
 .is-hidden {

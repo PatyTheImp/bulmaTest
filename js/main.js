@@ -29,6 +29,17 @@ function renderMovieInfo(data) {
         <p>${data.original_title_romanised}</p>
 
         <p><b>Description: </b>${data.description}</p>
+        <div class="media-container">
+        <img class="film-img" src="./media/totoro.png" alt="totoro" />
+        <video
+        class="film-video"
+          src="./media/Video of Black Cat.mp4"
+          type="video/mp4"
+          autoplay
+          muted
+          loop
+        ></video>
+      </div>
         <p><b>Director: </b>${data.director}</p>
         <p><b>Producer: </b>${data.producer}</p>
         <p><b>Release Year: </b>${data.release_date}</p>

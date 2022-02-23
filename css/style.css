@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+JP&family=Open+Sans&family=Zen+Loop&display=swap");
+
+.original-title,
+.film-title {
+  font-family: "Noto Serif JP", serif;
+}
+
+p {
+  font-family: "Open Sans", sans-serif;
+}
+
+.main-title {
+  font-family: "Zen Loop", cursive;
+}
+
+.is-hidden {
+  display: none;
+}

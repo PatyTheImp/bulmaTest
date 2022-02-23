@@ -1,122 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Studio Ghibli Films</title>
 
-    <!-- Bulma -->
-    <link rel="stylesheet" href="css/bulma.css">
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css" />
 
     <!-- Font Awesome -->
     <script defer src="js/all.js"></script>
     <!-- Meu Script  -->
     <script defer src="js/main.js"></script>
-</head>
+  </head>
 
-<body>
-
-    <style>
-        .original-title,
-        .film-title {
-            font-family: 'Noto Serif SC', serif;
-        }
-
-        p {
-            font-family: 'Open Sans', sans-serif;
-        }
-
-        .main-title {
-            font-family: 'Zen Loop', cursive;
-        }
-
-        .footer {
-            padding-bottom: 20rem;
-        }
-
-        .no-film {
-            margin-bottom: 20rem;
-        }
-    </style>
-
+  <body>
     <!-- Header -->
-    <header class="hero is-primary">
-        <div class="hero-body has-text-centered">
-            <p class="title is-1 main-title">
-                Studio Ghibli Films
-            </p>
-        </div>
+    <header>
+      <h1 class="main-title">Studio Ghibli Films</h1>
     </header>
 
-    <main class="container is-max-desktop my-5">
+    <main>
+      <!-- DropDown -->
+      <div class="films-dropdown">
+        <select class="films-select">
+          <option value="0">Select Film</option>
+        </select>
+      </div>
 
-        <div class="columns">
-            <!-- DropDown -->
-            <div class="column is-one-third films-dropdown">
-                <div class="select is-primary">
-                    <select class="films-select">
-                        <option value="0">Select Film</option>
-                    </select>
-                </div>
-            </div>
+      <!-- No Film Selected -->
+      <div class="no-film">
+        <h1>No Film Selected</h1>
+      </div>
 
-            <!-- No Film Selected -->
-            <div class="column no-film ">
-                <h1 class="title">No Film Selected</h1>
-            </div>
-
-            <!-- Film Info -->
-            <div class="column film-info content is-hidden">
-
-                <!-- Render info with JS -->
-
-            </div><!-- Film Info -->
-        </div>
-
+      <!-- Film Info -->
+      <div class="film-info is-hidden">
+        <!-- Render info with JS -->
+      </div>
+      <!-- Film Info -->
     </main>
 
     <!-- Footer -->
-    <footer class="footer has-background-dark">
-        <div class="content has-text-centered has-text-light">
-            <p>
-                Webb App made with HTML5, CSS3, Vanilla JS, Bulma and Studio Ghibli API.
-            </p>
-            <p>Made by Paty Costa</p>
-    
-            <div class="tags are-medium is-justify-content-center">
-                <span class="tag is-primary">
-                    <a class="has-text-light" href="https://github.com/PatyTheImp" target="_blank">
-                        <span class="icon-text is-align-items-center">
-                            <span class="icon is-medium">
-                                <i class="fab fa-lg fa-github"></i>
-                            </span>
-                            <span>GitHub</span>
-                        </span>
-                    </a>
-                </span>
-                <span class="tag is-primary">
-                    <a class="has-text-light"
-                        href="https://www.linkedin.com/in/patr%C3%ADcia-costa-032b4018b/" target="_blank">
-                        <span class="icon-text is-align-items-center">
-                            <span class="icon is-medium">
-                                <i class="fab fa-lg fa-linkedin"></i>
-                            </span>
-                            <span>LinkedIn</span>
-                        </span>
-                    </a>
-                </span>
-            </div>
-        </div>
+    <footer>
+      <p>Webb App made with HTML5, CSS3, Vanilla JS and Studio Ghibli API.</p>
+      <p>Made by Paty Costa</p>
+
+      <a href="https://github.com/PatyTheImp" target="_blank">
+        <i class="fab fa-lg fa-github"></i>
+        <span>GitHub</span>
+      </a>
+
+      <a
+        href="https://www.linkedin.com/in/patr%C3%ADcia-costa-032b4018b/"
+        target="_blank"
+      >
+        <i class="fab fa-lg fa-linkedin"></i>
+        <span>LinkedIn</span>
+      </a>
     </footer>
-
-</body>
-
+  </body>
 </html>

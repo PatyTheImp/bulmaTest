@@ -105,18 +105,34 @@ footer {
 .social-media {
   font-size: 2rem;
   margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .social-media a {
   margin-right: 2rem;
   text-decoration: none;
   color: var(--light-color);
+  display: flex;
+  align-items: center;
+}
+
+.social-media a svg {
+  width: 3rem;
+  height: auto;
+  fill: var(--light-color);
+  margin-right: .5rem;
+}
+
+.social-media a > * {
   transition: all 0.5s linear;
 }
 
-.social-media a:hover {
+.social-media a:hover > * {
   color: var(--link-color);
   text-shadow: 0 0 7rem var(--link-color);
+  fill: var(--link-color);
 }
 
 .is-hidden {

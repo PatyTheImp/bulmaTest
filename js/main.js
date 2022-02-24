@@ -1,7 +1,7 @@
 const filmsSelect = document.querySelector(".films-select");
 const filmsTitle = document.querySelector(".film-title");
 const originalTitle = document.querySelector(".original-title");
-const noFilm = document.querySelector(".no-film");
+// const noFilm = document.querySelector(".no-film");
 const filmInfo = document.querySelector(".film-info");
 
 //Acrescenta os filmes no dropdown
@@ -90,7 +90,7 @@ filmsSelect.addEventListener("change", async function () {
 
   //Se nenhum filme for seleccionado, esconde a informação de filmes
   if (id == 0) {
-    noFilm.classList.remove("is-hidden");
+    // noFilm.classList.remove("is-hidden");
     filmInfo.classList.add("is-hidden");
   } else {
     try {
@@ -105,7 +105,7 @@ filmsSelect.addEventListener("change", async function () {
       locations.forEach((url) => listInfo(url, "locations-list"));
       vehicles.forEach((url) => listInfo(url, "vehicles-list"));
 
-      noFilm.classList.add("is-hidden");
+      // noFilm.classList.add("is-hidden");
       filmInfo.classList.remove("is-hidden");
     } catch (error) {
       alert(error.message);

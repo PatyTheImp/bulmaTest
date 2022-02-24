@@ -68,8 +68,23 @@ header {
   margin-right: 2rem;
 }
 
+.films-select {
+  height: 4rem;
+  border-radius: 2rem;
+  text-align: center;
+  border: 3px solid var(--dark-color);
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  font-family: inherit;
+}
+
+.films-select:focus {
+  box-shadow: 0 0 5rem var(--link-color);
+  border: 3px solid var(--dark-color);
+}
+
 .films-select::-webkit-scrollbar {
-  width: 1em;
+  width: 1rem;
 }
 
 .original-title,
@@ -122,16 +137,17 @@ footer {
   width: 3rem;
   height: auto;
   fill: var(--light-color);
-  margin-right: .5rem;
+  margin-right: 0.5rem;
 }
 
 .social-media a > * {
   transition: all 0.5s linear;
 }
 
-.social-media a:hover > * {
+.social-media a:hover > *,
+.social-media a:focus > * {
   color: var(--link-color);
-  text-shadow: 0 0 7rem var(--link-color);
+  text-shadow: 0 0 5rem var(--link-color);
   fill: var(--link-color);
 }
 

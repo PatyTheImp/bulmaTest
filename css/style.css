@@ -58,6 +58,10 @@ header {
   border-bottom: 3px solid var(--dark-color);
 }
 
+.logo {
+  height: 15rem;
+}
+
 .main-title {
   font-family: "Zen Loop", cursive;
   font-size: 5rem;

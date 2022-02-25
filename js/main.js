@@ -1,7 +1,6 @@
 const filmsSelect = document.querySelector(".films-select");
 const filmsTitle = document.querySelector(".film-title");
 const originalTitle = document.querySelector(".original-title");
-// const noFilm = document.querySelector(".no-film");
 const filmInfo = document.querySelector(".film-info");
 
 //Acrescenta os filmes no dropdown
@@ -25,12 +24,14 @@ populateDropdown();
 function renderMovieInfo(data) {
   const html = `
         <h1 class="film-title">${data.title}</h1>
-        <h1 class="original-title">${data.original_title}</h1>
-        <p>${data.original_title_romanised}</p>
 
-        <p><b>Description: </b>${data.description}</p>
+        <div class="original-title-container">
+        <h1 class="original-title">${data.original_title}</h1>
+        <p class="original-title-rom">${data.original_title_romanised}</p>
+        </div>
+
+        <div class="film-media-desc">
         <div class="media-container">
-        <img class="film-img" src="./media/totoro.png" alt="totoro" />
         <video
         class="film-video"
           src="./media/Video of Black Cat.mp4"
@@ -39,28 +40,45 @@ function renderMovieInfo(data) {
           muted
           loop
         ></video>
+        <img class="film-img" src="./media/totoro.png" alt="totoro" />
+        
       </div>
+        <p><b>Description: </b>${data.description}</p>
+        </div>
+
+        <div class="film-extra-info">
         <p><b>Director: </b>${data.director}</p>
         <p><b>Producer: </b>${data.producer}</p>
         <p><b>Release Year: </b>${data.release_date}</p>
         <p><b>Running Time: </b>${data.running_time} min</p>
         <p><b>Score: </b>${data.rt_score}/100</p>
+        </div>
 
+        <div class="film-lists">
+        <div class="list-container">
         <p><b>People:</b></p>
         <ul class="people-list">
         </ul>
+        </div>
 
+        <div class="list-container">
         <p><b>Species:</b></p>
         <ul class="species-list">
         </ul>
+        </div>
 
+        <div class="list-container">
         <p><b>Locations:</b></p>
         <ul class="locations-list">
         </ul>
+        </div>
 
+        <div class="list-container">
         <p><b>Vehicles:</b></p>
         <ul class="vehicles-list">
         </ul>
+        </div>
+        </div>
     `;
 
   filmInfo.innerHTML = "";
@@ -90,7 +108,6 @@ filmsSelect.addEventListener("change", async function () {
 
   //Se nenhum filme for seleccionado, esconde a informação de filmes
   if (id == 0) {
-    // noFilm.classList.remove("is-hidden");
     filmInfo.classList.add("is-hidden");
   } else {
     try {
@@ -105,7 +122,6 @@ filmsSelect.addEventListener("change", async function () {
       locations.forEach((url) => listInfo(url, "locations-list"));
       vehicles.forEach((url) => listInfo(url, "vehicles-list"));
 
-      // noFilm.classList.add("is-hidden");
       filmInfo.classList.remove("is-hidden");
     } catch (error) {
       alert(error.message);

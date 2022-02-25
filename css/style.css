@@ -87,9 +87,45 @@ header {
   width: 1rem;
 }
 
+.film-info {
+  font-size: 1.5rem;
+  padding: 2rem;
+  max-width: 120rem;
+  margin: auto;
+}
+
 .original-title,
 .film-title {
   font-family: "Noto Serif JP", serif;
+}
+
+.film-title {
+  text-align: center;
+}
+
+.original-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+}
+
+.film-title {
+  font-size: 5rem;
+}
+
+.original-title {
+  font-size: 3rem;
+  margin-right: 1rem;
+  margin-bottom: 3rem;
+}
+
+.original-title-rom {
+  font-size: 2rem;
+}
+
+.film-media-desc {
+  display: flex;
+  align-items: center;
 }
 
 .media-container {
@@ -101,13 +137,27 @@ header {
 
 .film-img {
   max-height: 30rem;
-  transform: translateX(10rem) translateY(5rem);
+  transform: translateX(-10rem) translateY(5rem);
 }
 
 .film-video {
   max-height: 30rem;
   border-radius: 1rem;
-  line-height: 0;
+}
+
+.film-extra-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 2rem;
+}
+
+.film-lists {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+ul {
+  margin-left: 3rem;
 }
 
 footer {

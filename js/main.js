@@ -43,7 +43,7 @@ function renderMovieInfo(data) {
         <img class="film-img" src="./media/totoro.png" alt="totoro" />
         
       </div>
-        <p><b>Description: </b>${data.description}</p>
+        <p class="film-desc"><b>Description: </b>${data.description}</p>
         </div>
 
         <div class="film-extra-info">
@@ -78,6 +78,7 @@ function renderMovieInfo(data) {
         <ul class="vehicles-list">
         </ul>
         </div>
+        <div></div>
         </div>
     `;
 

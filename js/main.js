@@ -2,6 +2,8 @@ const filmsSelect = document.querySelector(".films-select");
 const filmsTitle = document.querySelector(".film-title");
 const originalTitle = document.querySelector(".original-title");
 const filmInfo = document.querySelector(".film-info");
+let filmImg = "";
+let filmVideo = "";
 
 //Acrescenta os filmes no dropdown
 async function populateDropdown() {
@@ -23,17 +25,17 @@ populateDropdown();
 
 function renderMovieInfo(data) {
   const html = `
-        <h1 class="film-title">${data.title}</h1>
+        <h1 class="film-title grow">${data.title}</h1>
 
         <div class="original-title-container">
-        <h1 class="original-title">${data.original_title}</h1>
-        <p class="original-title-rom">${data.original_title_romanised}</p>
+        <h1 class="original-title grow">${data.original_title}</h1>
+        <p class="original-title-rom grow">${data.original_title_romanised}</p>
         </div>
 
         <div class="film-media-desc">
         <div class="media-container">
         <video
-        class="film-video"
+        class="film-video grow"
           src="./media/Video of Black Cat.mp4"
           type="video/mp4"
           autoplay
@@ -43,10 +45,10 @@ function renderMovieInfo(data) {
         <img class="film-img" src="./media/totoro.png" alt="totoro" />
         
       </div>
-        <p class="film-desc"><b>Description: </b>${data.description}</p>
+        <p class="film-desc grow"><b>Description: </b>${data.description}</p>
         </div>
 
-        <div class="film-extra-info">
+        <div class="film-extra-info grow">
         <p><b>Director: </b>${data.director}</p>
         <p><b>Producer: </b>${data.producer}</p>
         <p><b>Release Year: </b>${data.release_date}</p>
@@ -54,7 +56,7 @@ function renderMovieInfo(data) {
         <p><b>Score: </b>${data.rt_score}/100</p>
         </div>
 
-        <div class="film-lists">
+        <div class="film-lists grow">
         <div class="list-container">
         <p><b>People:</b></p>
         <ul class="people-list">
@@ -84,6 +86,19 @@ function renderMovieInfo(data) {
 
   filmInfo.innerHTML = "";
   filmInfo.insertAdjacentHTML("beforeend", html);
+
+  filmImg = document.querySelector(".film-img");
+  filmVideo = document.querySelector(".film-video");
+
+  filmVideo.addEventListener("mouseenter", function () {
+    filmImg.classList.remove("gotofront");
+    filmImg.classList.add("gotoback");
+  });
+
+  filmVideo.addEventListener("mouseleave", function () {
+    filmImg.classList.remove("gotoback");
+    filmImg.classList.add("gotofront");
+  });
 }
 
 async function listInfo(URL, className) {

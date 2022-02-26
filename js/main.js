@@ -38,7 +38,7 @@ function renderMovieInfo(data) {
         <video
         class="film-video grow"
           poster="${data.movie_banner}"
-          src="./media/Video of Black Cat.mp4"
+          src="./media/${data.id}.mp4"
           type="video/mp4"
           controls
           controlsList="nodownload"

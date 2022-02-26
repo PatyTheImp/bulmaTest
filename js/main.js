@@ -89,20 +89,25 @@ function renderMovieInfo(data) {
   filmImg = document.querySelector(".film-img");
   filmVideo = document.querySelector(".film-video");
 
-  filmVideo.addEventListener("mouseenter", function () {
-    filmImg.classList.remove("gotofront");
-    filmImg.classList.add("gotoback");
-    filmVideo.classList.add("film-video-front");
-  });
-
-  filmVideo.addEventListener("mouseleave", function () {
-    if (filmVideo.paused) {
-      filmImg.classList.remove("gotoback");
-      filmImg.classList.add("gotofront");
-      filmVideo.classList.remove("film-video-front");
-    }
-  });
+  filmVideo.addEventListener("mouseenter", videoFront);
+  filmVideo.addEventListener("mouseleave", videoBack);
+  filmVideo.addEventListener("playing", videoFront);
+  filmVideo.addEventListener("pause", videoBack);
 }
+
+const videoFront = function () {
+  filmImg.classList.remove("gotofront");
+  filmImg.classList.add("gotoback");
+  filmVideo.classList.add("film-video-front");
+};
+
+const videoBack = function () {
+  if (filmVideo.paused) {
+    filmImg.classList.remove("gotoback");
+    filmImg.classList.add("gotofront");
+    filmVideo.classList.remove("film-video-front");
+  }
+};
 
 async function listInfo(URL, className) {
   try {

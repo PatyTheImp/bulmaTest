@@ -24,6 +24,7 @@ async function populateDropdown() {
 populateDropdown();
 
 function renderMovieInfo(data) {
+  console.log(data);
   const html = `
         <h1 class="film-title grow">${data.title}</h1>
 
@@ -36,12 +37,13 @@ function renderMovieInfo(data) {
         <div class="media-container">
         <video
         class="film-video grow"
+          poster="${data.movie_banner}"
           src="./media/Video of Black Cat.mp4"
           type="video/mp4"
           controls
           controlsList="nodownload"
         ></video>
-        <img class="film-img" src="./media/totoro.png" alt="totoro" />
+        <img class="film-img" src="${data.image}" alt="totoro" />
         
       </div>
         <p class="film-desc grow"><b>Description: </b>${data.description}</p>

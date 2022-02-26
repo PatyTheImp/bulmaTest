@@ -157,9 +157,8 @@ header {
   transition: z-index 0.1s linear 0.5s;
 }
 
-.film-video:hover {
+.film-video-front {
   z-index: 100;
-  overflow: hidden;
 }
 
 .gotoback {

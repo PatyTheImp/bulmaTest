@@ -38,9 +38,8 @@ function renderMovieInfo(data) {
         class="film-video grow"
           src="./media/Video of Black Cat.mp4"
           type="video/mp4"
-          autoplay
-          muted
-          loop
+          controls
+          controlsList="nodownload"
         ></video>
         <img class="film-img" src="./media/totoro.png" alt="totoro" />
         
@@ -93,11 +92,15 @@ function renderMovieInfo(data) {
   filmVideo.addEventListener("mouseenter", function () {
     filmImg.classList.remove("gotofront");
     filmImg.classList.add("gotoback");
+    filmVideo.classList.add("film-video-front");
   });
 
   filmVideo.addEventListener("mouseleave", function () {
-    filmImg.classList.remove("gotoback");
-    filmImg.classList.add("gotofront");
+    if (filmVideo.paused) {
+      filmImg.classList.remove("gotoback");
+      filmImg.classList.add("gotofront");
+      filmVideo.classList.remove("film-video-front");
+    }
   });
 }
 

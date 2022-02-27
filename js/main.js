@@ -24,7 +24,7 @@ async function populateDropdown() {
 populateDropdown();
 
 function renderMovieInfo(data) {
-  console.log(data);
+  console.log(data.id);
   const html = `
         <h1 class="film-title grow">${data.title}</h1>
 
